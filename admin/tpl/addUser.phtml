@@ -1,0 +1,65 @@
+
+           </div> 
+            <div class="row">
+                <?php if($error != ''): ?>
+                    <div class="alert alert-danger col-md-12 " role="alert">
+                        <h3>Error :</h3>
+                        <ul>
+                            <?= $error ?>
+                        </ul>
+                    </div>
+                <?php endif ?>
+            </div>
+
+                <div class="col-md-10 p-0">
+                    <div class="card mb-3">
+                        <div class="card-header text-white bg-dark">User add</div>
+                        <div class="card-body">
+                            <form method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="text" class="form-control <?= $isInvalidUsername ?>" id="username" name="username" placeholder="your username" value="<?= $username ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="firstname">Firstname</label>
+                                    <input type="text" required class="form-control <?= $isInvalidFirst ?>" id="firstname" name="firstname" placeholder="your firstname" value="<?= $firstname ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastname">Lastname</label>
+                                    <input type="text" required class="form-control <?= $isInvalidLast ?>" id="lastname" name="lastname" placeholder="your lastname" value="<?= $lastname ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="avatar">Avatar</label>
+                                    <input type="text" class="form-control" id="avatar" name="avatar" placeholder="your avatar">
+                                </div>
+                                <div>
+                                    <label for="email">Email address :</label>
+                                    <input type="email" required class="form-control <?= $isInvalidEmail ?>" id="email" name="email" aria-describedby="emailHelp" placeholder="write your mail" value="<?= $email ?>">
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password :</label>
+                                    <input type="password" required class="form-control <?= $isInvalidPassword ?>" id="password" name="password" placeholder="write your password">
+                                </div>
+                                <div class="form-group">
+                                    <label for="passwordSame">Password confirmation :</label>
+                                    <input type="password" class="form-control <?= $isInvalidPassword ?>" id="passwordSame" name="passwordSame" placeholder="rewrite your password">
+                                </div>
+                                <label for="role">Role</label>
+                                <select class="form-control form-control-sm mb-3" name="role" id="role">
+                                    <option value="ROLE_AUTHOR">Auteur</option>
+                                    <option value="ROLE_ADMIN">Admin</option>
+                                </select>
+                                <div class="form-group">
+                                    <label for="bio">Description</label>
+                                    <textarea class="form-control" id="bio" name="bio" value="<?= $bio ?>" rows="3"></textarea>
+                                </div>
+                                <div class="row">
+                                    <button type="submit" class="btn btn-primary ml-3 mt-4">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

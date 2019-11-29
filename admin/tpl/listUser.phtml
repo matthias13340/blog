@@ -1,0 +1,50 @@
+<section class="container mb-3">
+    <div class="row">
+        <div class=" col-4 p-0">
+            <a href="addUser.php">
+                <button type="button" class="btn btn-primary ">
+                    Ajouter un utilisateur
+                </button>
+            </a>
+        </div> 
+    </div>
+    <div class="row">
+        <div class="mt-5">
+            <p><?= $_SESSION['user']['firstNameAdd'] ?> <?= $_SESSION['user']['lastNameAdd']?> <?= $_SESSION['user']['addUser']?></p>
+        </div>
+        <div class="col-md-12 p-0 mt-3">
+            <table class="table table-striped table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Firstname</th>
+                        <th scope="col">Lastname</th>
+                        <th scope="col">Created date</th>
+                        <th scope="col">Last login date</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($usersInfos as $userInfo) : ?>
+                    <tr>
+                        <td><?= $userInfo['id'] ?></td>
+                        <td><?= $userInfo['first_name'] ?></td>
+                        <td><?= $userInfo['last_name'] ?></td>
+                        <td><?= $userInfo['created_date'] ?></td>
+                        <td><?= $userInfo['last_login_date'] ?></td>
+                        <td><?= $userInfo['email'] ?></td>
+                        <td><?= $userInfo['role'] ?></td>
+                        <td>
+                            <a href="#"><i class="fas fa-edit"></i></a>
+                            <a href="#"><i class="fas fa-trash-alt"></i></a>
+                        </td>                                
+                    </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    </div>   
+</section>
